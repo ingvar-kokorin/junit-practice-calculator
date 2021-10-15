@@ -1,0 +1,1 @@
+Junit practice on calculation methods
