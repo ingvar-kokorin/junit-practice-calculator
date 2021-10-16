@@ -2,25 +2,22 @@ package com.calculator;
 
 public class Calculator {
 
-    public Calculator() {
+    public int add(int a, int b) {
+        return a + b;
     }
 
-    public int add(int number1, int number2) {
-        return number1 + number2;
+    public int subtract(int a, int b) {
+        return a - b;
     }
 
-    public int subtract(int number1, int number2) {
-        return number1 - number2;
+    public int multiply(int a, int b) {
+        return a * b;
     }
 
-    public int multiply(int number1, int number2) {
-        return number1 * number2;
-    }
-
-    public double divide(int number1, int number2) {
-        if (number2 == 0) {
+    public double divide(int a, int b) {
+        if (b == 0) {
             throw new ArithmeticException("Cannot divide by 0");
         }
-        return (double) number1 / number2;
+        return (double) a / b;
     }
 }
