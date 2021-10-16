@@ -29,14 +29,14 @@ public class CalculatorParameterizedTest {
 
     @RunWith(Parameterized.class)
     public static class AddTest {
-        private final int numberA;
-        private final int numberB;
-        private final int expectedInteger;
+        private final int a;
+        private final int b;
+        private final int expected;
 
-        public AddTest(int numberA, int numberB, int expectedInteger) {
-            this.numberA = numberA;
-            this.numberB = numberB;
-            this.expectedInteger = expectedInteger;
+        public AddTest(int a, int b, int expected) {
+            this.a = a;
+            this.b = b;
+            this.expected = expected;
         }
 
         @Parameters
@@ -51,21 +51,21 @@ public class CalculatorParameterizedTest {
         }
 
         @Test
-        public void addTwoNumbersTest() {
-            assertEquals(expectedInteger, calculator.add(numberA, numberB));
+        public void shouldCorrectlyPerformAddition() {
+            assertEquals(expected, calculator.add(a, b));
         }
     }
 
     @RunWith(Parameterized.class)
     public static class SubtractTest {
-        private final int numberA;
-        private final int numberB;
-        private final int expectedInteger;
+        private final int a;
+        private final int b;
+        private final int expected;
 
-        public SubtractTest(int numberA, int numberB, int expectedInteger) {
-            this.numberA = numberA;
-            this.numberB = numberB;
-            this.expectedInteger = expectedInteger;
+        public SubtractTest(int a, int b, int expected) {
+            this.a = a;
+            this.b = b;
+            this.expected = expected;
         }
 
         @Parameters
@@ -80,21 +80,21 @@ public class CalculatorParameterizedTest {
         }
 
         @Test
-        public void subtractTwoNumbersTest() {
-            assertEquals(expectedInteger, calculator.subtract(numberA, numberB));
+        public void shouldCorrectlyPerformSubtraction() {
+            assertEquals(expected, calculator.subtract(a, b));
         }
     }
 
     @RunWith(Parameterized.class)
     public static class MultiplyTest {
-        private final int numberA;
-        private final int numberB;
-        private final int expectedInteger;
+        private final int a;
+        private final int b;
+        private final int expected;
 
-        public MultiplyTest(int numberA, int numberB, int expectedInteger) {
-            this.numberA = numberA;
-            this.numberB = numberB;
-            this.expectedInteger = expectedInteger;
+        public MultiplyTest(int a, int b, int expected) {
+            this.a = a;
+            this.b = b;
+            this.expected = expected;
         }
 
         @Parameters
@@ -108,21 +108,21 @@ public class CalculatorParameterizedTest {
         }
 
         @Test
-        public void multiplyTwoNumbersTest() {
-            assertEquals(expectedInteger, calculator.multiply(numberA, numberB));
+        public void shouldCorrectlyPerformMultiplication() {
+            assertEquals(expected, calculator.multiply(a, b));
         }
     }
 
     @RunWith(Parameterized.class)
     public static class DivideTest {
-        private final int numberA;
-        private final int numberB;
-        private final double expectedDouble;
+        private final int a;
+        private final int b;
+        private final double expected;
 
-        public DivideTest(int numberA, int numberB, double expectedDouble) {
-            this.numberA = numberA;
-            this.numberB = numberB;
-            this.expectedDouble = expectedDouble;
+        public DivideTest(int a, int b, double expected) {
+            this.a = a;
+            this.b = b;
+            this.expected = expected;
         }
 
         @Parameters
@@ -131,13 +131,12 @@ public class CalculatorParameterizedTest {
                     {25, 5, 5.0d},
                     {-25, -5, 5.0d},
                     {25, -5, -5.0d},
-                    {5, 0, Double.POSITIVE_INFINITY}
             });
         }
 
         @Test
-        public void divideTwoNumbersTest() {
-            assertEquals(expectedDouble, calculator.divide(numberA, numberB), 0.001);
+        public void shouldCorrectlyPerformDivision() {
+            assertEquals(expected, calculator.divide(a, b), 0.001);
         }
     }
 }
