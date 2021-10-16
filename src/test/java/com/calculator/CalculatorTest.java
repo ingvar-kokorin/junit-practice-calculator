@@ -105,7 +105,7 @@ public class CalculatorTest {
     }
 
     @Test(expected = ArithmeticException.class)
-    public void shouldCorrectlyPerformDivision_ByZero() {
+    public void shouldThrowArithmeticException_IfPerformingDivisionByZero() {
         double expected = Double.POSITIVE_INFINITY;
         double actual = calculator.divide(5, 0);
         assertEquals(expected, actual, 0.001);
